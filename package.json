@@ -6,7 +6,26 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --colors --progress",
     "build": "webpack --mode production --colors --progress",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint src/**.js",
+    "eslint:fix": "eslint src/**.js --fix",
+    "eslint:check": "eslint --print-config . | eslint-config-prettier-check"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -18,8 +37,16 @@
   },
   "homepage": "https://github.com/artur-code/wg-forge-js-welcome#readme",
   "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "express": "4.16.4",
     "html-webpack-plugin": "3.2.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.4",
+    "prettier": "1.16.4",
     "webpack": "4.28.4",
     "webpack-cli": "3.2.1",
     "webpack-dev-server": "3.1.14"
