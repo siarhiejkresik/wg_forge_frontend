@@ -1,10 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <title>WG Forge Test</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app"></div>
-</body>
+    <table class="table table-striped table-sm text-center">
+      <thead>
+        <tr>
+          <th colspan="6" class="text-right">Search:</th>
+          <th><input type="text" id="search" /></th>
+        </tr>
+        <tr>
+          <th>Transaction ID</th>
+          <th>User Info</th>
+          <th>Order Date</th>
+          <th>Order Amount <span>&#8595;</span></th>
+          <th>Card Number</th>
+          <th>Card Type</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr id="order_11">
+          <td>8292e007-4682-idkfa-a404-eed9662fa5cc</td>
+          <td class="user-data">
+            <a href="#" data-user-name>Mr. <b>Ivan Ivanivanskiy</b></a>
+            <div class="user-details" hidden>
+              <p>Birthday: 01/02/1991</p>
+              <p><img src="" width="100px" /></p>
+              <p>Company: <a href="http://awesome.website">Bumbershoot Corp.</a></p>
+              <p>Industry: Apparel / Consumer Services</p>
+            </div>
+          </td>
+          <td>21/12/2017, 1:13:47 AM</td>
+          <td>$453.47</td>
+          <td>30********4733</td>
+          <td>diners-club-carte-blanche</td>
+          <td>IS (211.145.96.59)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="6" class="text-left">Orders Count</td>
+          <td class="text-right">11</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="text-left">Orders Total</td>
+          <td class="text-right">$ 6722.72</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="text-left">Median Value</td>
+          <td class="text-right">$ 593.72</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="text-left">Average Check</td>
+          <td class="text-right">$ 611.16</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="text-left">Average Check (Female)</td>
+          <td class="text-right">$ 395.18</td>
+        </tr>
+        <tr>
+          <td colspan="6" class="text-left">Average Check (Male)</td>
+          <td class="text-right">$ 692.15</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      tbody.onclick = e => {
+        const a = e.target.closest('a[data-user-name]');
+        if (!a) {
+          return;
+        }
+        const td = a.closest('td.user-data');
+        if (!td) {
+          return;
+        }
+        const userDataNode = td.querySelector('.user-details');
+        if (!userDataNode) {
+          return;
+        }
+        userDataNode.hidden = !userDataNode.hidden;
+        e.preventDefault();
+      };
+    </script>
+  </body>
 </html>
