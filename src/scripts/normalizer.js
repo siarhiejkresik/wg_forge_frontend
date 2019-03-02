@@ -1,12 +1,7 @@
-import companies from '../../data/companies.json';
-import orders from '../../data/orders.json';
-import users from '../../data/users.json';
-
-const rawData = { companies, orders, users };
+const byId = 'byId';
+const allIds = 'allIds';
 
 function normalizeById(arr) {
-  const byId = 'byId';
-  const allIds = 'allIds';
   return arr.reduce(
     (result, obj) => {
       const { id } = obj;
@@ -29,4 +24,4 @@ function normalizeData(obj) {
   }, {});
 }
 
-console.log(normalizeData(rawData));
+export default normalizeData;

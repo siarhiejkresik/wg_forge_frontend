@@ -2,9 +2,9 @@ import * as formatters from './formatters';
 
 describe('Format order data', () => {
   describe('format order id for <tr> id', () => {
-    const { trOderId } = formatters;
+    const { trOrderId } = formatters;
     it('should return formatted id for <tr> tag', () => {
-      expect(trOderId(10)).toBe('order_10');
+      expect(trOrderId(10)).toBe('order_10');
     });
   });
 

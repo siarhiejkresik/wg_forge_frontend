@@ -5,7 +5,7 @@ function prependIntWithNulls(n, digitsNum = 2) {
   });
 }
 
-export function trOderId(id) {
+export function trOrderId(id) {
   return `order_${id}`;
 }
 
