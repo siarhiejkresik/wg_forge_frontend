@@ -53,7 +53,7 @@ export default function(user, company) {
   const { avatar } = user;
   appendToContainer(userAvatar(avatar));
 
-  if (company === undefined) {
+  if (!company) {
     return container;
   }
 
