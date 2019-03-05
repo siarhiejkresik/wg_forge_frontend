@@ -7,6 +7,7 @@
     "start": "webpack-dev-server --mode development --hot --colors --progress",
     "build": "webpack --mode production --colors --progress",
     "test": "jest",
+    "test:watch": "jest --watch",
     "eslint": "eslint src/**.js",
     "eslint:fix": "eslint src/**.js --fix",
     "eslint:check": "eslint --print-config . | eslint-config-prettier-check"
