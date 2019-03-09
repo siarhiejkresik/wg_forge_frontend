@@ -1,4 +1,4 @@
-import { filter, containQueryString } from './filter';
+import { contain, containQueryString } from './filter';
 
 describe('containQueryString', () => {
   it('should work when value and query are strings', () => {
@@ -95,14 +95,14 @@ describe('filter', () => {
   });
   it('should return true if the first object values contain query', () => {
     const query = 'ab';
-    expect(filter(query, arr)).toBe(true);
+    expect(contain(query, arr)).toBe(true);
   });
   it('should return true if the second object values contain query', () => {
     const query = 'jk';
-    expect(filter(query, arr)).toBe(true);
+    expect(contain(query, arr)).toBe(true);
   });
   it('should return false if values of all objects don’t contain query', () => {
-    const query = '12';
-    expect(filter(query, arr)).toBe(false);
+    const query = 'xz';
+    expect(contain(query, arr)).toBe(false);
   });
 });
