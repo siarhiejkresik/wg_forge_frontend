@@ -22,20 +22,6 @@ export function containQueryString({ obj, query, whiteList, blackList }) {
   });
 }
 
-// const userWhiteList = ['first_name', 'last_name'];
-// const orderBlackList = ['created_at', 'card_number', 'user_id', 'id'];
-
-// const data = [
-//   {
-//     obj: order,
-//     blackList: orderBlackList,
-//   },
-//   {
-//     obj: user,
-//     whiteList: userWhiteList,
-//   },
-// ];
-
-export function filter(query, arr) {
+export function contain(query, arr) {
   return arr.some(obj => containQueryString({ ...obj, query }));
 }
