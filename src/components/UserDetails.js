@@ -40,7 +40,7 @@ function companyIndustrySector(industry, sector) {
   return p;
 }
 
-export default function(user, company) {
+export default function({ user, company }) {
   const container = document.createElement('div');
   container.classList.add('user-details');
   const appendToContainer = append(container);

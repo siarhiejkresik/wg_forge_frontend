@@ -16,13 +16,13 @@ function userNameLink(user) {
   return a;
 }
 
-export default function UserInfoCell(user, company) {
+export default function UserInfoCell({ user, company }) {
   const td = document.createElement('td');
   td.classList.add('user-data');
 
   td.appendChild(userNameLink(user));
 
-  const userDetails = UserDetails(user, company);
+  const userDetails = UserDetails({ user, company });
   userDetails.hidden = true;
   td.appendChild(userDetails);
 
