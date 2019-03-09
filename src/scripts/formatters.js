@@ -57,7 +57,7 @@ export function cardNumberEscaped(cardNumber) {
 
 export function userName(firstName, lastName, gender) {
   let prefix = 'Ms.';
-  if (gender === 'male') {
+  if (gender === 'Male') {
     prefix = 'Mr.';
   }
   return `${prefix} ${firstName} ${lastName}`;

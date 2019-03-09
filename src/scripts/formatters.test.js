@@ -43,7 +43,7 @@ describe('Format user dataname', () => {
   describe('format user name', () => {
     const { userName } = formatters;
     it('should return formatted string for male', () => {
-      expect(userName('First', 'Second', 'male')).toBe('Mr. First Second');
+      expect(userName('First', 'Second', 'Male')).toBe('Mr. First Second');
     });
     it('should return formatted string for not male', () => {
       expect(userName('First', 'Second')).toBe('Ms. First Second');
