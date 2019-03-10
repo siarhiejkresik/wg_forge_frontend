@@ -72,3 +72,7 @@ export function userBirthday(unixTime) {
 export function number(num, digits = 2) {
   return num.toFixed(digits);
 }
+
+export function currency(amount) {
+  return `$${amount}`;
+}
