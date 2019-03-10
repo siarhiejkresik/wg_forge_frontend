@@ -68,3 +68,7 @@ export function userBirthday(unixTime) {
   const { DD, MM, YYYY } = date;
   return `${DD}/${MM}/${YYYY}`;
 }
+
+export function number(num, digits = 2) {
+  return num.toFixed(digits);
+}
