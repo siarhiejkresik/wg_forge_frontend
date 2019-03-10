@@ -1,0 +1,10 @@
+th[data-sortable] {
+  position: relative;
+  cursor: pointer;
+}
+
+th.sorted[data-sortable] span::after {
+  position: absolute;
+  content: '↓';
+  padding-left: 0.25em;
+}
