@@ -31,3 +31,10 @@ export function getUserInfoByOrderId(data, id) {
   const user = getUserByOrderId(data, id);
   return getUserInfo(data, user.id);
 }
+
+export function getLocationInfoByOrderId(data, id) {
+  const order = getOrderById(data, id);
+  const country = order.order_country;
+  const ip = order.order_ip;
+  return { country, ip };
+}
