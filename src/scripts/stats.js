@@ -41,6 +41,10 @@ export function averageCheckMale(ids, data) {
 }
 
 export function stats(ids, data) {
+  let flag = false;
+  if (ids.length === 0) {
+    flag = true;
+  }
   return {
     ordersCount: ordersCount(ids),
     ordersTotal: ordersTotal(ids, data),
@@ -50,5 +54,6 @@ export function stats(ids, data) {
       female: averageCheckFemale(ids, data),
       male: averageCheckMale(ids, data),
     },
+    _noVisibleIds: flag,
   };
 }
